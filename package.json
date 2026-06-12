@@ -1,0 +1,39 @@
+{
+  "name": "mahakalji",
+  "version": "1.0.0",
+  "description": "Mahakalji Remote Access — Desktop Client",
+  "main": "main.js",
+  "author": "Mahakalji",
+  "scripts": {
+    "start": "electron .",
+    "build:win": "electron-builder --win --x64",
+    "build:win32": "electron-builder --win --ia32",
+    "build:all": "electron-builder --win --x64 --ia32"
+  },
+  "build": {
+    "appId": "com.mahakalji.desktop",
+    "productName": "Mahakalji",
+    "copyright": "© 2024 Mahakalji",
+    "directories": { "output": "dist" },
+    "win": {
+      "target": [{ "target": "nsis", "arch": ["x64", "ia32"] }],
+      "icon": "assets/icon.ico",
+      "publisherName": "Mahakalji"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Mahakalji",
+      "runAfterFinish": true
+    }
+  },
+  "devDependencies": {
+    "electron": "^28.0.0",
+    "electron-builder": "^24.9.1"
+  },
+  "dependencies": {
+    "electron-store": "^8.1.0"
+  }
+}
